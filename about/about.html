@@ -183,5 +183,6 @@ document.getElementById('closeNav').addEventListener('click', () => document.get
 const obs = new IntersectionObserver((entries) => { entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.15 });
 document.querySelectorAll('.fade-up, .fade-right, .fade-left').forEach(el => obs.observe(el));
 </script>
+<script src="../hamburger.js"></script>
 </body>
 </html>
