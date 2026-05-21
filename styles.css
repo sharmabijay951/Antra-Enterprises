@@ -133,9 +133,27 @@ img { max-width: 100%; display: block; }
   display: none; flex-direction: column; gap: 5px; cursor: pointer;
   padding: 5px; background: none; border: none;
 }
+/* Hamburger Lines Transition */
 .hamburger span {
-  display: block; width: 26px; height: 2.5px;
-  background: var(--primary); border-radius: 2px; transition: all 0.3s;
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--primary);
+  margin: 5px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Jab hamburger active ho (Click karne par) */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0; /* Beech wali line gayab ho jayegi */
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 /* ===== HERO SECTION ===== */
