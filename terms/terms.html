@@ -7,7 +7,12 @@
   <title>Terms & Conditions | Antra Enterprises</title>
   <link rel="icon" type="image/jpeg" href="../assets/logo.jpg">
   <meta name="title" content="Terms & Conditions | Antra Enterprises">
-  <meta name="description" content="Terms and Conditions for using the Antra Enterprises website and its services.">
+  <meta name="description" content="Read the Terms and Conditions for Antra Enterprises. Understanding the guidelines for using our services, careers portal, and infrastructure solutions in Bihar.">
+  <meta name="keywords" content="Antra Enterprises Terms of Service, Website usage terms, Operational guidelines Bihar">
+  <meta property="og:title" content="Terms & Conditions | Antra Enterprises">
+  <meta property="og:description" content="Read the Terms and Conditions for Antra Enterprises. Understanding the guidelines for using our services, careers portal, and infrastructure solutions in Bihar.">
+  <meta property="og:image" content="https://sharmabijay951.github.io/Antra-Enterprises/assets/logo.jpg">
+  <meta property="og:type" content="website">
   <meta name="author" content="Anand Kumar | Antra Enterprises">
   
   <link rel="stylesheet" href="../styles.css">
@@ -71,23 +76,21 @@
 
 <header id="main-header">
   <div class="logo-area">
-    <img src="../assets/logo.jpg" alt="Antra Enterprises Logo" style="height:50px;width:50px;border-radius:8px;">
-    <div class="logo-text">
-      <h1>ANTRA ENTERPRISES</h1>
-      <span>Complete Operations Solutions</span>
-    </div>
+    <img src="../assets/logo.jpg" alt="Antra Enterprises Logo">
+    <div class="logo-text"><h1>ANTRA ENTERPRISES</h1><span>Complete Operations Solutions</span></div>
   </div>
   
   <button class="hamburger" id="menuBtn" aria-label="Open Menu">
-    <span></span><span></span><span></span>
+    <span></span>
+    <span></span>
+    <span></span>
   </button>
   
   <nav class="main-nav">
     <a href="../index.html">Home</a>
     <a href="../about/about.html">About Us</a>
     <a href="../services/services.html">Services</a>
-    <a href="../join us/join-us.html">Join Us</a>
-    <a href="terms.html">Terms & Conditions</a>
+    <a href="../join-us/index.html">Join Us</a>
     <a href="../contact/contact.html">Contact Us</a>
   </nav>
 </header>
@@ -97,7 +100,7 @@
   <a href="../index.html">🏠 Home</a>
   <a href="../about/about.html">🏢 About Us</a>
   <a href="../services/services.html">⚙️ Services</a>
-  <a href="../join us/join-us.html">👥 Join Us</a>
+  <a href="../join-us/index.html">💼 Join Us</a>
   <a href="../contact/contact.html">📞 Contact Us</a>
 </div>
 
@@ -230,14 +233,6 @@
   });
   
   document.getElementById('scrollTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-  document.getElementById('menuBtn').addEventListener('click', () => {
-    document.getElementById('mobileNav').classList.add('open');
-  });
-  
-  document.getElementById('closeNav').addEventListener('click', () => {
-    document.getElementById('mobileNav').classList.remove('open');
-  });
 
   const obs = new IntersectionObserver((entries) => { 
     entries.forEach(e => { 
