@@ -276,77 +276,62 @@
   
   document.querySelectorAll('.fade-up, .fade-right, .fade-left').forEach(el => obs.observe(el));
 
-  // 4. CLEAN FORM SUBMISSION LOGIC
-  document.getElementById('contactForm').addEventListener('submit', function(event) {
+ // 4. LIVE CONTACT FORM SUBMISSION LOGIC
+  document.getElementById('contactForm').addEventListener('submit', async function(event) {
     event.preventDefault(); 
     
-    const submitBtn = document.getElementById('submitBtn');
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
-    
-    setTimeout(() => {
-      const successMsg = document.getElementById('successMsg');
-      successMsg.style.display = 'block';
-      
-      document.getElementById('contactForm').reset();
-      
-      submitBtn.textContent = 'Send Message →';
-      submitBtn.disabled = false;
-      
-      setTimeout(() => {
-        successMsg.style.display = 'none';
-      }, 5000);
-      
-    }, 1500);
-  });
+    // 👇 YAHAN PAR APNA NAYA CONTACT WALA SCRIPT URL DAALEIN 👇
+    const CONTACT_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxfaROGcAsh-3OVOpHiw6dG4z8WAgCeUJlzmWPTv9M-7e4k5Ydhk_Q1TDSqFsxN4guN5w/exec";
+    // 👆 YAHAN PAR APNA NAYA CONTACT WALA SCRIPT URL DAALEIN 👆
 
-  // 5. SMART EMAIL CHOOSER LOGIC (Local Network Safe)
-  function openEmailChooser() {
+    if(CONTACT_SCRIPT_URL === "YOUR_NEW_CONTACT_SCRIPT_URL_HERE" || CONTACT_SCRIPT_URL === "") {
+      alert("Bhai! Pehle Contact Form ka Google Script URL code mein daalo.");
+      return;
+    }
+
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.textContent = 'Sending Message... ⏳';
+    submitBtn.disabled = true;
+    submitBtn.style.background = "#4a5568";
+    
     try {
-      const modal = document.getElementById('emailModal');
-      if (modal) {
-        modal.style.display = 'flex';
+      // Form ka data jama karna
+      let payload = {
+        name: document.getElementById('name').value.trim(),
+        phone: document.getElementById('phone').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        service: document.getElementById('service').value,
+        message: document.getElementById('message').value.trim()
+      };
+
+      // Google Script par bhejna
+      let response = await fetch(CONTACT_SCRIPT_URL, {
+        method: 'POST',
+        body: JSON.stringify(payload)
+      });
+      
+      let result = await response.json();
+      
+      if (result.status === "success") {
+        const successMsg = document.getElementById('successMsg');
+        successMsg.style.display = 'block';
+        
+        document.getElementById('contactForm').reset(); // Form khali karo
+        
+        setTimeout(() => {
+          successMsg.style.display = 'none';
+        }, 5000);
+      } else {
+        throw new Error(result.message);
       }
     } catch (error) {
-      console.log("Popup blocked by mobile browser.");
-      window.location.href = "mailto:antra.enterprises022@gmail.com";
+      alert("Oops! Network error ki wajah se message nahi gaya. Kripya baad mein try karein.");
     }
-  }
 
-  function closeEmailChooser() {
-    document.getElementById('emailModal').style.display = 'none';
-  }
-
-  function copyEmailText() {
-    if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText("antra.enterprises022@gmail.com").then(() => {
-        showCopySuccess();
-      }).catch(err => {
-        fallbackCopy();
-      });
-    } else {
-      fallbackCopy();
-    }
-  }
-
-  function showCopySuccess() {
-    const btn = document.getElementById("copyBtnTxt");
-    btn.innerText = "✅ Copied!";
-    btn.style.background = "#d4edda";
-    btn.style.borderColor = "#c3e6cb";
-    btn.style.color = "#155724";
-    
-    setTimeout(() => {
-      btn.innerText = "📋 Copy Email Address";
-      btn.style.background = "#f0f4f8";
-      btn.style.borderColor = "#e2e8f0";
-      btn.style.color = "#152865";
-    }, 2000);
-  }
-
-  function fallbackCopy() {
-    alert("Copy this email: antra.enterprises022@gmail.com");
-  }
+    submitBtn.textContent = 'Send Message →';
+    submitBtn.disabled = false;
+    submitBtn.style.background = "var(--primary)";
+  });
 </script>
 
 </body>
