@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Contact Us | Antra Enterprises</title>
+  <meta name="title" content="Contact Us | Antra Enterprises">
+  <link rel="icon" type="image/jpeg" href="../assets/logo.jpg">
+  <meta name="description" content="Get in touch with Antra Enterprises for Oxygen Plant Management, Manpower Supply, Civil Works, and DG Set Spare Parts in Bhagalpur.">
+  <meta name="author" content="Anand Kumar | Antra Enterprises">
+  
+  <link rel="stylesheet" href="../styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-logo">
+      <img src="../assets/logo.jpg" alt="Antra Enterprises">
+    </div>
+    <div class="preloader-text">ANTRA ENTERPRISES</div>
+    <div class="preloader-bar"><div class="preloader-fill"></div></div>
+  </div>
+</div>
+
+<header id="main-header">
+  <div class="logo-area">
+    <img src="../assets/logo.jpg" alt="Antra Enterprises Logo">
+    <div class="logo-text">
+      <h1>ANTRA ENTERPRISES</h1>
+      <span>Complete Operations Solutions</span>
+    </div>
+  </div>
+  
+  <button class="hamburger" id="menuBtn" aria-label="Open Menu">
+    <span></span><span></span><span></span>
+  </button>
+  
+  <nav class="main-nav">
+    <a href="../index.html">Home</a>
+    <a href="../about/about.html">About Us</a>
+    <a href="../services/services.html">Services</a>
+    <a href="../join us/join-us.html">Join Us</a>
+    <a href="contact.html" class="active">Contact Us</a>
+  </nav>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" id="closeNav">&times;</button>
+  <a href="../index.html">🏠 Home</a>
+  <a href="../about/about.html">🏢 About Us</a>
+  <a href="../services/services.html">⚙️ Services</a>
+  <a href="../join us/join-us.html">👥 Join Us</a>
+  <a href="contact.html">📞 Contact Us</a>
+</div>
+
+<main>
+  <section class="page-hero">
+    <div class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <span>Contact Us</span></div>
+    <h1 class="fade-up">Get In Touch</h1>
+    <p class="fade-up">We are here to provide the best operational support and manpower solutions for your enterprise.</p>
+  </section>
+
+  <section class="contact-section">
+    <div class="contact-grid">
+      
+      <div class="contact-info-card fade-right">
+        <h3>Contact Information</h3>
+        <p>Reach out to us directly through phone, email, or visit our office in Bhagalpur.</p>
+        
+        <div class="contact-item">
+          <div class="ci-icon">📍</div>
+          <div class="ci-text">
+            <strong>Head Office</strong>
+            <span>Amarpur Road, Bhagalpur - 812005, Bihar</span>
+          </div>
+        </div>
+        
+        <div class="contact-item">
+          <div class="ci-icon">📞</div>
+          <div class="ci-text">
+            <strong>Phone Numbers</strong>
+            <span>+91 9155768844<br>+91 9934694189</span>
+          </div>
+        </div>
+        
+        <div class="contact-item">
+          <div class="ci-icon">📧</div>
+          <div class="ci-text">
+            <strong>Email Address</strong>
+            <span>antra.enterprises022@gmail.com</span>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="ci-icon">🏢</div>
+          <div class="ci-text">
+            <strong>Business Registration</strong>
+            <span>GSTIN: 10AMZPK6153B1Z6</span>
+          </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+          <p style="font-size: 0.8rem; opacity: 0.7; margin-bottom: 12px; font-weight: 600;">CONNECT WITH US</p>
+          <div style="display: flex; gap: 10px;">
+            <a href="https://wa.me/919934694189" style="background: #25d366; color: white; padding: 10px 18px; border-radius: 20px; font-size: 0.82rem; font-weight: 600; text-decoration: none;">💬 WhatsApp</a>
+            
+            <button type="button" onclick="openEmailChooser()" style="background: rgba(255,255,255,0.15); color: white; padding: 10px 18px; border-radius: 20px; font-size: 0.82rem; font-weight: 600; text-decoration: none; border: none; cursor: pointer; display: inline-block;">📧 Email Us</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-card fade-left">
+        <h3>Send us a Message</h3>
+        
+        <div id="successMsg" style="display:none; background: #d4edda; color: #155724; padding: 14px 18px; border-radius: 10px; margin-bottom: 20px; font-size: 0.9rem; font-weight: 500;">
+          ✅ Thank you! Your message has been sent successfully. Our team will contact you soon.
+        </div>
+
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="your.email@example.com">
+          </div>
+          
+          <div class="form-group">
+            <label for="service">Service Required</label>
+            <select id="service">
+              <option value="">— Select a service —</option>
+              <option>Oxygen Plant Operations</option>
+              <option>Manpower Supply</option>
+              <option>Civil & Electrical Works</option>
+              <option>D.G. Set Spare Parts</option>
+              <option>Security Services</option>
+              <option>Hospital Administration Support</option>
+              <option>Other / General Inquiry</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message Details *</label>
+            <textarea id="message" placeholder="Describe your requirements in detail..." required></textarea>
+          </div>
+          
+          <button type="submit" class="btn-submit" id="submitBtn">Send Message →</button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <div class="logo-area">
+        <img src="../assets/logo.jpg" alt="Antra Enterprises Logo" style="height:50px;width:50px;border-radius:8px;">
+        <div class="logo-text">
+          <h1>ANTRA ENTERPRISES</h1>
+          <span>Complete Operations Solutions</span>
+        </div>
+      </div>
+      <p>Deals in all types of Canopy D.G. Set Spare Parts, Electrical Equipment, Civil Work &amp; Order Suppliers. Trusted partner for hospitals and enterprises in Bihar.</p>
+      <p class="footer-gstin">GSTIN: 10AMZPK6153B1Z6</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="../services/services.html">Oxygen Plant Operations</a></li>
+        <li><a href="../services/services.html">Manpower Supply</a></li>
+        <li><a href="../services/services.html">Civil &amp; Electrical Works</a></li>
+        <li><a href="../services/services.html">D.G. Set Spare Parts</a></li>
+        <li><a href="../services/services.html">Security Services</a></li>
+        <li><a href="../services/services.html">Hospital Administration</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about/about.html">About Us</a></li>
+        <li><a href="../services/services.html">Services</a></li>
+        <li><a href="../contact/contact.html">Contact Us</a></li>
+        <li><a href="../join us/join-us.html">Join Us</a></li>  
+        <li><a href="../privacy/privacy.html">Privacy Policy</a></li>
+        <li><a href="../terms-and-conditions/index.html">Terms & Conditions</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <div class="footer-contact-item">
+        <span class="icon">📍</span>
+        <span>Amarpur Road, Bhagalpur - 812005, Bihar</span>
+      </div>
+      <div class="footer-contact-item">
+        <span class="icon">📧</span>
+        <span>antra.enterprises022@gmail.com</span>
+      </div>
+      <div class="footer-contact-item">
+        <span class="icon">📞</span>
+        <span>+91 9155768844</span>
+      </div>
+      <div class="footer-contact-item">
+        <span class="icon">📞</span>
+        <span>+91 9934694189</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Antra Enterprises. All rights reserved.</span>
+  </div>
+</footer>
+
+<div id="emailModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 10000; align-items: center; justify-content: center; backdrop-filter: blur(5px);">
+  <div style="background: white; padding: 30px; border-radius: 12px; width: 90%; max-width: 350px; text-align: center; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
+    <button onclick="closeEmailChooser()" style="position: absolute; top: 15px; right: 20px; background: transparent; border: none; font-size: 1.5rem; cursor: pointer; color: #666;">&times;</button>
+    <h3 style="color: #152865; margin-top: 0; margin-bottom: 20px; font-size: 1.3rem;">Choose Email App</h3>
+    
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=antra.enterprises022@gmail.com" target="_blank" style="display: block; padding: 12px; background: #ea4335; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-family: 'Poppins', sans-serif;">🔴 Open in Gmail</a>
+      <a href="https://outlook.live.com/owa/?path=/mail/action/compose&to=antra.enterprises022@gmail.com" target="_blank" style="display: block; padding: 12px; background: #0078d4; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-family: 'Poppins', sans-serif;">🔵 Open in Outlook</a>
+      <a href="mailto:antra.enterprises022@gmail.com" style="display: block; padding: 12px; background: #152865; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-family: 'Poppins', sans-serif;">📱 Open Mail App</a>
+      <button onclick="copyEmailText()" id="copyBtnTxt" style="display: block; width: 100%; padding: 12px; background: #f0f4f8; color: #152865; border: 2px solid #e2e8f0; text-decoration: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-family: 'Poppins', sans-serif;">📋 Copy Email Address</button>
+    </div>
+  </div>
+</div>
+
+<button id="scrollTop" aria-label="Scroll to top">&#8679;</button>
+
+<script>
+  // 1. Preloader Logic
+  window.addEventListener('load', () => { 
+    setTimeout(() => { 
+      const p = document.getElementById('preloader'); 
+      if(p) { p.style.opacity='0'; p.style.visibility='hidden'; }
+    }, 1300); 
+  });
+
+  // 2. Navbar Scroll, Hamburger & ScrollTop Logic
+  window.addEventListener('scroll', () => {
+    document.getElementById('main-header').classList.toggle('scrolled', window.scrollY > 50);
+    document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 300);
+  });
+  
+  document.getElementById('scrollTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  document.getElementById('menuBtn').addEventListener('click', () => {
+    document.getElementById('mobileNav').classList.add('open');
+  });
+  
+  document.getElementById('closeNav').addEventListener('click', () => {
+    document.getElementById('mobileNav').classList.remove('open');
+  });
+
+  // 3. Scroll Animations
+  const obs = new IntersectionObserver((entries) => { 
+    entries.forEach(e => { 
+      if(e.isIntersecting) e.target.classList.add('visible'); 
+    }); 
+  }, { threshold: 0.15 });
+  
+  document.querySelectorAll('.fade-up, .fade-right, .fade-left').forEach(el => obs.observe(el));
+
+  // 4. CLEAN FORM SUBMISSION LOGIC
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+    
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+    
+    setTimeout(() => {
+      const successMsg = document.getElementById('successMsg');
+      successMsg.style.display = 'block';
+      
+      document.getElementById('contactForm').reset();
+      
+      submitBtn.textContent = 'Send Message →';
+      submitBtn.disabled = false;
+      
+      setTimeout(() => {
+        successMsg.style.display = 'none';
+      }, 5000);
+      
+    }, 1500);
+  });
+
+  // 5. SMART EMAIL CHOOSER LOGIC (Local Network Safe)
+  function openEmailChooser() {
+    try {
+      const modal = document.getElementById('emailModal');
+      if (modal) {
+        modal.style.display = 'flex';
+      }
+    } catch (error) {
+      console.log("Popup blocked by mobile browser.");
+      window.location.href = "mailto:antra.enterprises022@gmail.com";
+    }
+  }
+
+  function closeEmailChooser() {
+    document.getElementById('emailModal').style.display = 'none';
+  }
+
+  function copyEmailText() {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText("antra.enterprises022@gmail.com").then(() => {
+        showCopySuccess();
+      }).catch(err => {
+        fallbackCopy();
+      });
+    } else {
+      fallbackCopy();
+    }
+  }
+
+  function showCopySuccess() {
+    const btn = document.getElementById("copyBtnTxt");
+    btn.innerText = "✅ Copied!";
+    btn.style.background = "#d4edda";
+    btn.style.borderColor = "#c3e6cb";
+    btn.style.color = "#155724";
+    
+    setTimeout(() => {
+      btn.innerText = "📋 Copy Email Address";
+      btn.style.background = "#f0f4f8";
+      btn.style.borderColor = "#e2e8f0";
+      btn.style.color = "#152865";
+    }, 2000);
+  }
+
+  function fallbackCopy() {
+    alert("Copy this email: antra.enterprises022@gmail.com");
+  }
+</script>
+
+</body>
+</html>
